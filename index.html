@@ -98,7 +98,15 @@
         for (item of ts) {
           item.onclick = (e) => {
             let ele = e.target.parentElement.parentElement;
-            ele.querySelector(".answer").classList.toggle("hidden");
+            let img = ele.querySelector("img");
+            let answer = ele.querySelector(".answer").classList;
+
+            answer.toggle("hidden");
+            if (answer.contains("hidden")) {
+              img.setAttribute("src", "assets/images/icon-plus.svg");
+            } else {
+              img.setAttribute("src", "assets/images/icon-minus.svg");
+            }
           };
         }
       </script>
