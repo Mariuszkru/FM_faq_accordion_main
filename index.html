@@ -15,6 +15,7 @@
     <title>Frontend Mentor | FAQ accordion</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
       .attribution {
         font-size: 11px;
@@ -92,7 +93,15 @@
           </div>
         </div>
       </div>
-
+      <script>
+        let ts = document.querySelectorAll(".element");
+        for (item of ts) {
+          item.onclick = (e) => {
+            let ele = e.target.parentElement.parentElement;
+            ele.querySelector(".answer").classList.toggle("hidden");
+          };
+        }
+      </script>
       <div class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
